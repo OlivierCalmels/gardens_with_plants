@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Garden.destroy_all if Rails.env.development?
-Tag.destroy_all if Rails.env.development?
 
 little = Garden.create!(
   name: "My Little Garden",
@@ -37,4 +36,6 @@ Plant.create!(
   garden: other
 )
 
-
+["Greasy plant", "Ferns", "Fruit tree", "Cactus", "Flower", "Conifers"].each do |name|
+  Tag.create!(name: name)
+end
